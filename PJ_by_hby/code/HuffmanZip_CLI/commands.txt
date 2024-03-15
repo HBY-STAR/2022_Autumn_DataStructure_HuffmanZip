@@ -1,0 +1,76 @@
+注：以下命令在PowerShell中均可运行，在cmd中无法运行Measure-Command命令
+
+在执行下面的命令前请确保已将HuffmanZip_CLI.exe文件与要压缩的文件或文件夹置于同一目录下，
+并执行 cd ---- 命令切换到该目录下
+
+帮助界面：
+ .\HuffmanZip_CLI --h
+ 
+压缩格式：.\HuffmanZip_CLI   zip_hby   anyname.hby   file_or_folder
+  此命令将一个当前目录下的文件 file_or_folder 压缩为 anyname.hby并保存到当前目录下，
+  anyname.hby意为压缩文件名可以任意选取，但必须指定后缀为.hby
+  具体命令参考：
+ .\HuffmanZip_CLI zip_hby testcase01EmptyFile.hby testcase01EmptyFile 
+ .\HuffmanZip_CLI zip_hby testcase02NormalSingleFile.hby testcase02NormalSingleFile 
+ .\HuffmanZip_CLI zip_hby testcase03XLargeSingleFile.hby testcase03XLargeSingleFile 
+ .\HuffmanZip_CLI zip_hby testcase04EmptyFolder.hby testcase04EmptyFolder 
+ .\HuffmanZip_CLI zip_hby testcase05NomalFolder.hby testcase05NomalFolder
+ .\HuffmanZip_CLI zip_hby testcase06SubFolders.hby testcase06SubFolders 
+ .\HuffmanZip_CLI zip_hby testcase07XlargeSubFolders.hby testcase07XlargeSubFolders 
+ .\HuffmanZip_CLI zip_hby testcase08Speed.hby testcase08Speed 
+ .\HuffmanZip_CLI zip_hby testcase09Ratio.hby testcase09Ratio 
+
+解压格式：.\HuffmanZip_CLI   unzip_hby   zip_file
+  此命令将一个当前目录的后缀为.hby的压缩文件zip_file解压到当前目录下，
+  可自动识别解压的文件还是文件夹并还原文件原名
+  具体命令参考：
+ .\HuffmanZip_CLI unzip_hby testcase01EmptyFile.hby
+ .\HuffmanZip_CLI unzip_hby testcase02NormalSingleFile.hby  
+ .\HuffmanZip_CLI unzip_hby testcase03XLargeSingleFile.hby  
+ .\HuffmanZip_CLI unzip_hby testcase04EmptyFolder.hby  
+ .\HuffmanZip_CLI unzip_hby testcase05NomalFolder.hby 
+ .\HuffmanZip_CLI unzip_hby testcase06SubFolders.hby  
+ .\HuffmanZip_CLI unzip_hby testcase07XlargeSubFolders.hby  
+ .\HuffmanZip_CLI unzip_hby testcase08Speed.hby  
+ .\HuffmanZip_CLI unzip_hby testcase09Ratio.hby  
+
+预览格式：.\HuffmanZip_CLI   prev_hby   zip_file
+  此命令可以预览当前目录的后缀为.hby的一个压缩文件zip_file
+  具体命令参考：
+ .\HuffmanZip_CLI prev_hby testcase01EmptyFile.hby
+ .\HuffmanZip_CLI prev_hby testcase02NormalSingleFile.hby  
+ .\HuffmanZip_CLI prev_hby testcase03XLargeSingleFile.hby  
+ .\HuffmanZip_CLI prev_hby testcase04EmptyFolder.hby  
+ .\HuffmanZip_CLI prev_hby testcase05NomalFolder.hby 
+ .\HuffmanZip_CLI prev_hby testcase06SubFolders.hby  
+ .\HuffmanZip_CLI prev_hby testcase07XlargeSubFolders.hby  
+ .\HuffmanZip_CLI prev_hby testcase08Speed.hby  
+ .\HuffmanZip_CLI prev_hby testcase09Ratio.hby  
+
+测量压缩时间：
+ Measure-Command {.\HuffmanZip_CLI zip_hby testcase01EmptyFile.hby testcase01EmptyFile }
+ Measure-Command {.\HuffmanZip_CLI zip_hby testcase02NormalSingleFile.hby testcase02NormalSingleFile }
+ Measure-Command {.\HuffmanZip_CLI zip_hby testcase03XLargeSingleFile.hby testcase03XLargeSingleFile }
+ Measure-Command {.\HuffmanZip_CLI zip_hby testcase04EmptyFolder.hby testcase04EmptyFolder }
+ Measure-Command {.\HuffmanZip_CLI zip_hby testcase05NomalFolder.hby testcase05NomalFolder}
+ Measure-Command {.\HuffmanZip_CLI zip_hby testcase06SubFolders.hby testcase06SubFolders }
+ Measure-Command {.\HuffmanZip_CLI zip_hby testcase07XlargeSubFolders.hby testcase07XlargeSubFolders }
+ Measure-Command {.\HuffmanZip_CLI zip_hby testcase08Speed.hby testcase08Speed }
+ Measure-Command {.\HuffmanZip_CLI zip_hby testcase09Ratio.hby testcase09Ratio }
+
+测量解压时间：
+ Measure-Command {.\HuffmanZip_CLI unzip_hby testcase01EmptyFile.hby}
+ Measure-Command {.\HuffmanZip_CLI unzip_hby testcase02NormalSingleFile.hby  }
+ Measure-Command {.\HuffmanZip_CLI unzip_hby testcase03XLargeSingleFile.hby  }
+ Measure-Command {.\HuffmanZip_CLI unzip_hby testcase04EmptyFolder.hby  }
+ Measure-Command {.\HuffmanZip_CLI unzip_hby testcase05NomalFolder.hby }
+ Measure-Command {.\HuffmanZip_CLI unzip_hby testcase06SubFolders.hby  }
+ Measure-Command {.\HuffmanZip_CLI unzip_hby testcase07XlargeSubFolders.hby  }
+ Measure-Command {.\HuffmanZip_CLI unzip_hby testcase08Speed.hby  }
+ Measure-Command {.\HuffmanZip_CLI unzip_hby testcase09Ratio.hby  }
+
+
+
+
+
+
